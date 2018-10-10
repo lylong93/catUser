@@ -26,6 +26,11 @@ export default new Router({
 	      	path: '/me',
 	      	name: 'Me',
 	      	component: Me
+	      },
+	      {
+	      	path: '/order',
+	      	name: 'Order',
+	      	component: Order
 	      }
       ]
     },{
