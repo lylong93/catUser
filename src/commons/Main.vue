@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <router-view/>
+    <router-view />
    	<Footer/>
   </div>
 </template>
@@ -15,5 +15,11 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.main {
+	border:1px solid black;
+	height: 100vh;
+	display: flex;
+	flex-direction:column;
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="wrapper">
 		home
 	</div>
 </template>
@@ -12,3 +12,8 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+	.wrapper {
+		flex:1;
+	}
+</style>
