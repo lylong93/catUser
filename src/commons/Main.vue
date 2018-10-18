@@ -17,7 +17,6 @@ export default {
 
 <style lang="scss" scoped>
 .main {
-	border:1px solid black;
 	height: 100vh;
 	display: flex;
 	flex-direction:column;

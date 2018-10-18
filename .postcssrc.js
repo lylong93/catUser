@@ -20,7 +20,7 @@ module.exports = {
     	mediaQuery: false // 允许在媒体查询中转换`px`著作权归作者所有。
     },
 
-    // to edit target browsers: use "browserslist" field in package.json
+  //   // to edit target browsers: use "browserslist" field in package.json
     "cssnano": {
     			 preset: "advanced", 
     				autoprefixer: false,
