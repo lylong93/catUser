@@ -1,9 +1,9 @@
 <template>
 	<div class="wrapper">
-		<!-- <HomeHead/> -->
-		<!-- <HomeWeek/> -->
+		<HomeHead/>
+		<HomeWeek/>
 		<HomeHot/>
-    <!-- <HomeRecommend/> -->
+    <HomeRecommend/>
 	</div>
 </template>
 <script>
@@ -28,5 +28,7 @@ export default {
 <style lang="scss" scoped>
 	.wrapper {
 		flex:1;
+    overflow: scroll;
+    background-color:rgb(246,2465,245);
 	}
 </style>

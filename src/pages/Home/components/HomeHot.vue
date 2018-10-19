@@ -1,5 +1,6 @@
 <template>
 	<div class="homehot">
+		<h2 class="homehot-title">热门精品</h2>
 		<div  name="list" class="homehot-main" @touchstart="start" @touchend="end">
 			<span  class="eve"  v-for="(item,index) in list" :key="item" >
 				{{item}}
@@ -36,6 +37,11 @@
 </script>
 <style lang="scss" scoped>
 	.homehot {
+		.homehot-title {
+			padding: 0 30px;
+			font-size: 36px;
+			margin: 50px 0;
+		}
 		.homehot-main{
 			display: flex;
 			height: 635px;

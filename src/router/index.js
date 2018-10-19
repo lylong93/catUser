@@ -7,6 +7,7 @@ import Main from '@/commons/Main'
 import Home from '@/pages/Home'
 import Order from '@/pages/Order'
 import Me from '@/pages/Me'
+import Bulletin from '@/pages/Bulletin'
 
 Vue.use(Router)
 
@@ -26,6 +27,11 @@ export default new Router({
 	      	path: '/me',
 	      	name: 'Me',
 	      	component: Me
+	      },
+	      {
+	      	path: '/bulletin',
+	      	name: 'bulletin',
+	      	component: Bulletin
 	      },
 	      {
 	      	path: '/order',

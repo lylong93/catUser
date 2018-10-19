@@ -28,8 +28,21 @@
 		.homehead-img{
 			height:360px;
 			width: 100%;
-			border:1px solid black;
 			margin: 0 auto;
+			background-color: rgba(0,0,0,.6);
+			position: relative;
+			border-radius: 5px;
+			&:after{
+				content: '';
+				width:95%;
+				height: 10px;
+				border-bottom-left-radius:10px;
+				border-bottom-right-radius:10px;
+				background-color: rgb(180,180,180);
+				position: absolute;
+				bottom:-10px;
+				left:2.5%;
+			}
 		}
 	}
 </style>

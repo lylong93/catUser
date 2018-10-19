@@ -1,5 +1,6 @@
 <template>
 	<div class="homeweek">
+		<h2  class="homeweek-title">本周菜谱</h2>
 		<div class="homeweek-img">
 			<div class="eve"  v-for="i in footList"></div>
 		</div>
@@ -16,6 +17,11 @@
 </script>
 <style lang="scss" scoped>
 	.homeweek {
+		padding: 0 30px;
+		.homeweek-title {
+			font-size: 36px;
+			margin: 50px 0;
+		}
 		.homeweek-img {
 			display: flex;
 			border:1px solid yellow;
@@ -25,7 +31,7 @@
 				width: 322px;
 				height: 159px;
 				border:1px solid red;
-				margin: 0 30px;
+				margin-right: 30px;
 			}
 		}
 

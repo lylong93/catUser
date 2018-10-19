@@ -1,53 +1,68 @@
 <template>
+	<div class="homerecommend">
+		<div class="homerecommend-head">
+			<h2 class="head-title">今日推荐</h2>
+			<div class="head-tabs">
+				<span v-for="(item,index) in tabs" class="eve" :class="{'light':index===tabItem}" @click="change(index)" :key="index">
+					{{item}}
+				</span>
+			</div>
 
-<div id="list-demo" class="demo">
-  <button v-on:click="add">Add</button>
-  <button v-on:click="remove">Remove</button>
-  <transition-group name="list" tag="div" class="main">
-    <span v-for="(item,index) in items" :key="item" class="list-item">
-      {{ item }}
-    </span>
-  </transition-group>
-</div>
+		</div>
+		<div class="homerecommend-main">
+			<div v-for="i in lists" class="eve">
+				{{i}}
+			</div>
+		</div>
+	</div>
 </template>
 <script>
 	export default {
-		 data(){
-		 	return{
-		 		items: [1,2,3,4,5,6,7,8,9],
-    			nextNum: 10
-		 	}
-
-  },
-  methods: {
-    randomIndex: function () {
-      return Math.floor(Math.random() * this.items.length)
-    },
-    add: function () {
-      this.items.splice(this.randomIndex(), 0, this.nextNum++)
-    },
-    remove: function () {
-      this.items.splice(this.randomIndex(), 1)
-    },
-  }
+		data() {
+			return {
+				tabs:['最近','好评','最优'],
+				tabItem:0,
+				lists: [1,2]
+			}
+		},
+		methods: {
+			change(index) {
+				this.tabItem = index;
+			}
+		}
 	}
 </script>
 <style lang="scss" scoped>
-.main {
+.homerecommend {
+	padding: 0 30px;
+}
+.homerecommend-head {
 	display: flex;
-	border:1px solid black;
+	justify-content:space-between;
+	align-items:center;
+	margin: 50px 0;
+	.head-title {
+		font-size: 36px;
+	}
+	.head-tabs {
+		display: flex;
+		.eve {
+			margin-left: 50px;
+			color:rgb(165,165,165);
+		}
+		.light {
+			color: rgb(247,148,28);
+			padding: 0 0 5px 0;
+			border-bottom: 3px solid rgb(247,148,28);
+		}
+	}
 }
-.list-item {
-  display: inline-block;
-  border:1px solid red;
-  margin-right: 10px;
-}
-.list-enter-active, .list-leave-active {
-  transition: all 1s;
-}
-.list-enter, .list-leave-to
-/* .list-leave-active for below version 2.1.8 */ {
-  opacity: 0;
-  transform: translateY(30px);
+.homerecommend-main {
+	.eve {
+		height:197px;
+		margin:30px 0;
+		background-color: #fff;
+		box-shadow: 0 5px 5px -1px rgb(144,144,144);  
+	}
 }
 </style>
