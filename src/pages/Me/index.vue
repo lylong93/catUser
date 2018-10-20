@@ -10,10 +10,14 @@ export default {
       
     }
   },
+  components:{
+
+  }
 }
 </script>
 <style lang="scss" scoped>
 	.wrapper {
 		flex:1;
+		background-color:rgb(246,2465,245);
 	}
 </style>

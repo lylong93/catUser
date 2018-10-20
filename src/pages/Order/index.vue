@@ -29,6 +29,7 @@ export default {
 	.wrapper{
 		flex:1;
 		overflow: scroll;
+		background-color:rgb(246,2465,245);
 		.head {
 			.title {
 				display: flex;
