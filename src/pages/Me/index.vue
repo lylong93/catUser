@@ -1,9 +1,12 @@
 <template>
 	<div class="wrapper">
-		me
+	  	<MeHead/>
+	  	<MeOther/>
 	</div>
 </template>
 <script>
+import MeHead from './components/MeHead'
+import MeOther from './components/MeOther'
 export default {
   data () {
     return {
@@ -11,7 +14,8 @@ export default {
     }
   },
   components:{
-
+  	MeHead,
+  	MeOther
   }
 }
 </script>
