@@ -9,6 +9,8 @@ import Order from '@/pages/Order'
 import Me from '@/pages/Me'
 import Bulletin from '@/pages/Bulletin'
 
+import Shop from '@/pages/Shop'
+
 Vue.use(Router)
 
 export default new Router({
@@ -37,7 +39,12 @@ export default new Router({
 	      	path: '/order',
 	      	name: 'Order',
 	      	component: Order
-	      }
+	      },
+	       {
+	      	path: '/shop',
+	      	name: 'Shop',
+	      	component: Shop
+	      },
       ]
     },{
      	path: '/login',
