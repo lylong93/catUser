@@ -4,34 +4,39 @@
 			点餐
 		</div>
 		<div class="shopfoot-main">
-			<div class="foodtiem" v-for="(item,index) in foodList" :key="index">
-				<div class="foodtiem-left">
+			<div class="fooditem" v-for="(item,index) in foodList" :key="index">
+				<div class="fooditem-left">
 					<div class="img"></div>
 					<div class="detail">
 						<div class="name">风味千层饼</div>
-						<div>※</div>
+						<Star/>
 						<div>
-							<span class="price">15</span>
-							RMB
+							<span class="price">15.00</span>RMB
 						</div>
 					</div>
 				</div>
-				<div class="foodtiem-right">
+				<div class="fooditem-right">
 					<div  class="num">月销90笔</div>
-					<div  class="contral">contral</div>
+					<NumberContral/>
 				</div>
 			</div>
 		</div>
 	</div>
 </template>
 <script>
-	export default {
-		data() {
-			return {
-				foodList:[1,2,3,4,5,6]
-			}
+import NumberContral from './NumberContral'
+import Star from './Star'
+export default {
+	data() {
+		return {
+			foodList:[1,2,3,4,5,6]
 		}
+	},
+	components:{
+		NumberContral,
+		Star
 	}
+}
 </script>
 <style lang="scss" scoped>
 	 .shopfoot{
@@ -52,14 +57,14 @@
 	 		&::-webkit-scrollbar {
 	 		 	width: 0 !important
 	 		  }
-	 		.foodtiem {
+	 		.fooditem {
 	 			display: flex;
 	 			justify-content:space-between;
 	 			margin: 20px 0;
 	 			height:200px;
 	 			background-color: #fff;
 	 			box-shadow: 0 5px 5px -1px rgb(144,144,144);
-	 			.foodtiem-left {
+	 			.fooditem-left {
 	 				display: flex;
 		 			.img{
 		 				height:200px;
@@ -71,6 +76,7 @@
 		 				display: flex;
 		 				flex-direction:column;
 		 				justify-content:space-around;
+		 				font-size: 20px;
 		 				.name {
 		 					font-size: 28px;
 		 				}
@@ -80,7 +86,7 @@
 		 				}
 		 			}
 	 			}
-	 			.foodtiem-right {
+	 			.fooditem-right {
 	 				display: flex;
 	 				flex-direction:column;
 	 				justify-content:space-between;

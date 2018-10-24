@@ -7,9 +7,11 @@ import Main from '@/commons/Main'
 import Home from '@/pages/Home'
 import Order from '@/pages/Order'
 import Me from '@/pages/Me'
-import Bulletin from '@/pages/Bulletin'
+import Search from '@/pages/Search'
 
 import Shop from '@/pages/Shop'
+import Pay from '@/pages/Pay'
+import Detail from '@/pages/Detail'
 
 Vue.use(Router)
 
@@ -31,9 +33,9 @@ export default new Router({
 	      	component: Me
 	      },
 	      {
-	      	path: '/bulletin',
-	      	name: 'bulletin',
-	      	component: Bulletin
+	      	path: '/search',
+	      	name: 'search',
+	      	component: Search
 	      },
 	      {
 	      	path: '/order',
@@ -45,6 +47,16 @@ export default new Router({
 	      	name: 'Shop',
 	      	component: Shop
 	      },
+	      {
+	      	path: '/pay',
+	      	name: 'pay',
+	      	component: Pay
+	      },
+	      {
+	      	path: '/detail',
+	      	name: 'detail',
+	      	component: Detail
+	      }
       ]
     },{
      	path: '/login',

@@ -1,5 +1,6 @@
 <template>
-	<div class="bulletinlist">
+	<div class="detailcom">
+		<div class="title">评论</div>
 		<div v-for="(item,index) in lists" :key="index" class="eve">
 			<div class="eve-head">
 				<div class="eve-head-left">
@@ -56,14 +57,15 @@
 	}
 </script>
 <style lang="scss" scoped>
-.bulletinlist {
+.detailcom {
 	padding:  0 30px 30px 30px;
 	.eve {
 		padding: 10px 30px;
 		height: 430px;
 		margin-top: 30px;
-		box-shadow: 0px 0px 10px  rgb(144,144,144);
 		box-sizing:border-box;
+		background-color: #fff;
+		box-shadow: 0px 0px 10px  rgb(144,144,144);
 		.eve-head {
 			display: flex;
 			justify-content:space-between;

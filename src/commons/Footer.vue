@@ -1,11 +1,16 @@
 <template>
 	<div class="wrapper">
-		<span class="eve">1</span>
-		<span class="eve">2</span>
-		<span class="eve">3</span>
-		<span class="eve">4</span>
+		<span class="eve" @click="$router.push('/home')">home</span>
+		<span class="eve" @click="$router.push('/search')">search</span>
+		<span class="eve" @click="$router.push('/me')">me</span>
 	</div>
 </template>
+<script>
+	export default {
+		methods:{
+		}
+	}
+</script>
 <style  lang="scss" scoped>
 	.wrapper {
 		height: 90px;
