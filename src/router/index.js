@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Login from '@/pages/Entry/Login'
+import Registe from '@/pages/Entry/Registe'
 import Main from '@/commons/Main'
 
 import Home from '@/pages/Home'
@@ -60,8 +61,12 @@ export default new Router({
       ]
     },{
      	path: '/login',
-      name: 'Login',
-      component: Login
+      	name: 'Login',
+     	component: Login
+    },{
+    	path: '/registe',
+      	name: 'Registe',
+     	component: Registe
     }
   ]
 })
