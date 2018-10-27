@@ -13,6 +13,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "cssnano": "^4.1.5",
     "cssnano-preset-advanced": "^4.0.3",
     "postcss-aspect-ratio-mini": "^0.0.2",
@@ -21,7 +22,8 @@
     "postcss-viewport-units": "^0.1.4",
     "postcss-write-svg": "^3.0.1",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

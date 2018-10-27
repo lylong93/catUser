@@ -19,7 +19,7 @@ export default {
 	methods:{
 		clean() {
 			console.log(this.value)
-			this.ovalue = ''
+			// this.value = ''
 		},
 		dshow() {
 			this.value = ''

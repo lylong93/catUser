@@ -8,30 +8,43 @@
         <img src="./icons/pwd.png" slot="icon" style="width: 37px; height: 30px"/>
     </EntryInput>
     <div class="mid">
-      <span class="other">立即注册</span>
+      <span class="other" @click="goRegiste">立即注册</span>
       <span class="">密码找回</span>
     </div>
-    <EntryButton text='开吃'/>
+    <EntryButton text='开吃' @myClick="login"/>
+    <Err :msg="errMsg" v-show="err"/>
 	</div>
 </template>
 <script>
+import Err from '@/commons/Err'
 import EntryInput from './components/EntryInput'
 import EntryButton from './components/EntryButton'
+import { mapActions } from 'vuex'
 export default {
   name: 'Login',
   data () {
     return {
-      num:''
+      num:'',
+      err:false,
+      errMsg:'密码错误',
     }
   },
   methods:{
+    ...mapActions([]),
     ok() {
       alert(this.num)
+    },
+    goRegiste() {
+      this.$router.push('/registe')
+    },
+    login() {
+      // this.$router.push('/')
     }
   },
   components:{
 		EntryInput,
-    EntryButton
+    EntryButton,
+    Err
   }
 }
 </script>

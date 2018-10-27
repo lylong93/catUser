@@ -3,7 +3,7 @@
 		<h2 class="mehead-title">我的</h2>
 		<div class="mehead-user">
 			<div class="avat"></div>
-			<span class="name">罗小黑</span>
+			<span class="name">{{name}}</span>
 		</div>
 		<div  class="mehead-foot">
 			<div>钱包</div>
@@ -13,6 +13,7 @@
 </template>
 <script>
 	export default {
+		props:['name'],
 		data() {
 			return {
 

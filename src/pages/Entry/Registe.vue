@@ -5,10 +5,15 @@
     <EntrySteps :step="TabNum"/>
     <div>
       <div class="tab" v-show="TabNum === 0">
-        <EntryInput/>
-        <EntryInput/>
-        <EntryInput/>
-        <EntryInput/>
+        <EntryInput v-model="user">
+          <img src="./icons/num.png" slot="icon" style="width: 37px; height: 30px"/>
+        </EntryInput>
+        <EntryInput v-model="pwd">
+           <img src="./icons/pwd.png" slot="icon" style="width: 37px; height: 30px"/>
+        </EntryInput>
+        <EntryInput v-model="pwdagain">
+          <img src="./icons/pwd.png" slot="icon" style="width: 37px; height: 30px"/>
+        </EntryInput>
         <EntryButton text='下一步' @myClick="step"/>
       </div>
       <div class="tab" v-show="TabNum === 1">
@@ -21,40 +26,68 @@
       <div class="tab" v-show="TabNum === 2">
         选择头像
         <div class="avats">
-          <div v-for="(item,index) in avats" class="avatItem">
+          <div v-for="(item,index) in avatars" class="avatItem">
           {{item}}
           </div>
         </div>
-        <EntryButton text='完成'/>
+        <EntryButton text='完成' @myClick="finsh"/>
       </div>
     </div>
+    <Err :msg="errMsg" v-show="err"/>
 	</div>
 </template>
 <script>
 import Back from '@/commons/Back'
+import Err from '@/commons/Err'
 import EntryInput from './components/EntryInput'
 import EntrySteps from './components/EntrySteps'
 import EntryButton from './components/EntryButton'
+import { mapActions } from 'vuex'
+import {apiUserRegiste} from '@/api'
+
 export default {
-  name: 'Login',
   data () {
     return {
       TabNum:0,
       likes:['甜食','清淡','香辣'],
-      avats:[1,2,3,4],
-      img: require('./icons/di_02.png')
+      avatars:[1,2,3,4],
+      err:true,
+      user:'',
+      errMsg:'无',
+      pwd:'',
+      pwdagain:'',
+      likeId:'',
+      avatar:''
     }
   },
   methods:{
+    ...mapActions([
+        'registe',
+      ]),
     step() {
-     this.TabNum ++
+      if(!this.pwd||!this.pwd||!this.pwdagain) {
+        this.errMsg = '请完成表单' 
+        return
+      }
+      if(this.pwd!==this.pwdagain) {
+        this.errMsg = '两次密码不一致'
+        return
+      }     
+      console.log(apiUserRegiste())
+     
+      // this.TabNum ++
+      this.registe()
+    },
+    finsh() {
+      this.$router.push('/login')
     }
   },
   components:{
 		EntryInput,
     EntryButton,
     EntrySteps,
-    Back
+    Back,
+    Err
   }
 }
 </script>
