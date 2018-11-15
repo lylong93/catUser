@@ -2,7 +2,7 @@
 	<div class="homeweek">
 		<h2  class="homeweek-title">本周菜谱</h2>
 		<div class="homeweek-img">
-			<div class="eve"  v-for="i in footList"></div>
+			<img class="eve"  v-for="i in footList" :src="i" />
 		</div>
 	</div>
 </template>
@@ -10,7 +10,10 @@
 	export default {
 		data() {
 			return {
-				footList: [1,2,3]
+				footList: [require('../icons/week_03.png'),
+						   require('../icons/week_05.png'),
+						   require('../icons/week_03.png')
+				]
 			}
 		}
 	}
@@ -24,13 +27,11 @@
 		}
 		.homeweek-img {
 			display: flex;
-			border:1px solid yellow;
 			overflow: scroll;
 			.eve{
 				flex:none;
 				width: 322px;
 				height: 159px;
-				border:1px solid red;
 				margin-right: 30px;
 			}
 		}

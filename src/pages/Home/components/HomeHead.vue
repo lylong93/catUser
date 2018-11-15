@@ -5,7 +5,7 @@
 			<div>you</div>
 		</div>
 		<div class="homehead-title">吃货猫</div>
-		<div class="homehead-img"></div>
+		<img class="homehead-img" src=".././icons/home.png"/>
 	</div>
 </template>
 <script>
