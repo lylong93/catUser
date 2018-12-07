@@ -14,6 +14,7 @@ import Shop from '@/pages/Shop'
 import Pay from '@/pages/Pay'
 import Detail from '@/pages/Detail'
 
+import Chat from '@/pages/Chat'
 Vue.use(Router)
 
 export default new Router({
@@ -57,7 +58,11 @@ export default new Router({
 	      	path: '/detail',
 	      	name: 'detail',
 	      	component: Detail
-	      }
+		  },{
+	      	path: '/chat',
+	      	name: 'Chat',
+	      	component: Chat
+	      },
       ]
     },{
      	path: '/login',
