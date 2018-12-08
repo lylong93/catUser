@@ -1,12 +1,13 @@
 <template>
 	<div class="wrapper">
-		<div class="main">
-			<ChatInput/>
-		</div>
+        <Back/>
+        <ChatList/>
+        <ChatInput/>
 	</div>
 </template>
 <script>
-
+import Back from '@/commons/Back'
+import ChatList from './components/ChatList'
 import ChatInput from './components/ChatInput'
 export default  {
 	data() {
@@ -15,7 +16,9 @@ export default  {
 		}
 	},
 	components: {
-		ChatInput,
+        ChatInput,
+        ChatList,
+        Back
 	}
 }
 </script>
@@ -30,9 +33,5 @@ export default  {
 	flex-direction:column;
 	flex:1;
     background-color:rgb(246,2465,245);
-    .main{
-    	flex:1;
-    	overflow: scroll;
-    	}
 	}
 </style>
