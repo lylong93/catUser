@@ -1,8 +1,11 @@
 <template>
 	<div class="chatlist">
-        <div class="chatlist-item" v-for="i in list">
-            <div class="item-avatar"></div>
-            <div class="item-msg"></div>
+        <div class="chatlist-item"  v-for="i in list" :class={right:i.flag}>
+            <div class="item-avatar" v-show="!i.flag"></div>
+            <div class="item-msg" :class="[i.flag?rightClass:leftClass]">
+                {{i.msg}}
+            </div>
+            <div class="item-avatar" v-show="i.flag"></div>
         </div>
 	</div>
 </template>
@@ -10,7 +13,9 @@
 export default  {
 	data() {
 		return{
-            list:[1,2,3]
+            list:[{flag:true,msg:'我手动挡和建行手机号集合计划,我手动挡和建行手机号集合计划'},{flag:false,msg:'我手动挡和建行手'},{flag:true},{flag:false},{flag:true},{flag:false},{flag:true},{flag:false},{flag:true}],
+            rightClass: 'msgright',
+            leftClass: 'msgleft',
 		}
 	},
 }
@@ -18,33 +23,51 @@ export default  {
 <style lang="scss" scoped>
 	.chatlist {
        flex:1;
-        border:1px solid black;
         overflow:scroll;
+        background-color:#D9ECFE;
         .chatlist-item {
             display: flex;
+            margin: 50px 0;
             .item-avatar {
-                border:1px solid blue;
+                border:1px solid red;
                 height: 80px;
                 width: 80px;
                 border-radius: 50%;
             }
             .item-msg{
-                height: 80px;
-                width: 30%;
-                border:1px solid blue;
+                min-height: 80px;
+                max-width: 60%;
+                border:1px solid rgb(135,135,135);
                 position: relative;
-                margin-left:10px;
                 &::after{
                     content: '';
                     width: 0px;
                     height: 0px;
                     position:absolute;
                     border: 10px solid transparent;
-                    border-right-color:blue;
-                    bottom:30px;
+                    top:30px;
+                }
+            }
+            .msgleft {
+                margin-left:10px;
+                background-color: #fff;
+                 &::after{
+                    border-right-color:red;
                     left:-20px;
                 }
             }
+            .msgright{
+                 margin-right:10px;
+                 background-color: rgba(247,148,28,1);
+                 &::after{
+               
+                    border-left-color:red;
+                    right:-20px;
+                }
+            }
+        }
+        .right{
+            justify-content: flex-end;
         }
 	}
 </style>
