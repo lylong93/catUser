@@ -1,17 +1,17 @@
 <template>
 	<div class="wrapper">
     <img src="./icons/login.png" class="img" @click="ok"/>
-		<EntryInput v-model="num">
+		<EntryInput v-model="username">
         <img src="./icons/num.png" slot="icon" style="width: 37px; height: 30px"/>
     </EntryInput>
-    <EntryInput>
+    <EntryInput v-model="password">
         <img src="./icons/pwd.png" slot="icon" style="width: 37px; height: 30px"/>
     </EntryInput>
     <div class="mid">
       <span class="other" @click="goRegiste">立即注册</span>
       <span class="">密码找回</span>
     </div>
-    <EntryButton text='开吃' @myClick="login"/>
+    <EntryButton text='开吃' @myClick="log"/>
     <Err :msg="errMsg" v-show="err"/>
 	</div>
 </template>
@@ -24,21 +24,28 @@ export default {
   name: 'Login',
   data () {
     return {
-      num:'',
+      username:'',
+      password:'',
       err:false,
       errMsg:'密码错误',
     }
   },
   methods:{
-    ...mapActions([]),
+    ...mapActions('user',[
+     'login',
+    ]),
     ok() {
       alert(this.num)
     },
     goRegiste() {
       this.$router.push('/registe')
     },
-    login() {
-      // this.$router.push('/')
+    log() {
+      let user = {
+        username:this.username,
+        password:this.password
+      }
+      this.login(user)
     }
   },
   components:{

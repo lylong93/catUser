@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const URL = 'http://localhost:8000';
 const token = localStorage.getItem('token');
-// 拦截
+// 请求拦截
 axios.interceptors.request.use((config) => {
 	config.baseURL = URL
 	config.timeout = 5000
@@ -11,7 +11,11 @@ axios.interceptors.request.use((config) => {
 }, (error) => {
 	return Promise.reject(error);
 });
-
-
+// 返回拦截
+axios.interceptors.response.use((response) => {
+	console.log(response)
+}, (error) => {
+	return Promise.reject(error);
+});
 
 export default axios
