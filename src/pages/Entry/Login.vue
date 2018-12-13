@@ -31,8 +31,8 @@ export default {
     }
   },
   methods:{
-    ...mapActions('user',[
-     'login',
+    ...mapActions([
+     'user/login',
     ]),
     ok() {
       alert(this.num)

@@ -62,7 +62,7 @@ export default {
   },
   methods:{
     ...mapActions([
-        'registe',
+        'user/registe',
       ]),
     step() {
       if(!this.pwd||!this.pwd||!this.pwdagain) {
@@ -72,11 +72,16 @@ export default {
       if(this.pwd!==this.pwdagain) {
         this.errMsg = '两次密码不一致'
         return
-      }     
-      console.log(apiUserRegiste())
-     
+      }
+      
+      let user = {
+        username:this.user,
+        password:this.pwd
+      }
+    
+      this['user/registe'](user)
       // this.TabNum ++
-      this.registe()
+
     },
     finsh() {
       this.$router.push('/login')

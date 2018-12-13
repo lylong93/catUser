@@ -5,10 +5,23 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    loadin:'false'
+    loadFlag: false,
+    err:'',
   },
-  // mutations,
-  // actions
+  mutations:{
+    loading(state){
+      state.loadFlag = true
+    },
+    loadEnd() {
+      state.loadFlag = false
+    },
+    deErr(msg) {
+      state.err = msg
+    }
+  },
+  // // actions:{
+
+  // }
   modules
 })
 
