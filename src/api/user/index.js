@@ -10,6 +10,8 @@ const user = {
 	getMstList: (params = {}) => {
 		return http.get('/api/shopchat/msglist',{params})
 	},
-
+	refurbish:(params ={}) => {
+		return http.get('/api/user/getinfo',{params})
+	}
 }
 export default user

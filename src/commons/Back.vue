@@ -1,7 +1,7 @@
 <template>
 	<div class="back">
 		<div class="backhead">
-			<span>返回</span>
+			<span @click="back">返回</span>
 		</div>
 	</div>
 </template>
@@ -10,6 +10,11 @@
 		data() {
 			return {
 
+			}
+		},
+		methods:{
+			back() {
+				this.$router.back()
 			}
 		}
 	}

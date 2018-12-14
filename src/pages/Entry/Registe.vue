@@ -42,8 +42,7 @@ import Err from '@/commons/Err'
 import EntryInput from './components/EntryInput'
 import EntrySteps from './components/EntrySteps'
 import EntryButton from './components/EntryButton'
-import { mapActions } from 'vuex'
-import {apiUserRegiste} from '@/api'
+import { mapActions,mapState} from 'vuex'
 
 export default {
   data () {
@@ -60,11 +59,16 @@ export default {
       avatar:''
     }
   },
+  computed:{
+    ...mapState({
+      LOGINED: state => state.LOGINED,
+    })
+  },
   methods:{
     ...mapActions([
         'user/registe',
       ]),
-    step() {
+    async step() {
       if(!this.pwd||!this.pwd||!this.pwdagain) {
         this.errMsg = '请完成表单' 
         return
@@ -79,8 +83,11 @@ export default {
         password:this.pwd
       }
     
-      this['user/registe'](user)
-      // this.TabNum ++
+      await this['user/registe'](user)
+      
+      if(this.LOGINED) {
+        this.$router.push('/')
+      }
 
     },
     finsh() {

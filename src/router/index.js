@@ -15,6 +15,8 @@ import Pay from '@/pages/Pay'
 import Detail from '@/pages/Detail'
 
 import Chat from '@/pages/Chat'
+import ChatList from '@/pages/ChatList'
+
 Vue.use(Router)
 
 export default new Router({
@@ -58,6 +60,10 @@ export default new Router({
 	      	path: '/detail',
 	      	name: 'detail',
 	      	component: Detail
+		  },{
+			path: '/chatlist',
+			name: 'ChatList',
+			component:ChatList
 		  },{
 	      	path: '/chat',
 	      	name: 'Chat',

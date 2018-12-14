@@ -9,6 +9,9 @@
 import Footer from './Footer'
 export default {
   name: 'App',
+  created() {
+    // this.$store.dispatch('user/refurbish')
+  },
   components:{
     Footer
   }
@@ -20,5 +23,6 @@ export default {
 	height: 100vh;
 	display: flex;
 	flex-direction:column;
+  background-color:rgb(246,2465,245);
 }
 </style>

@@ -12,10 +12,10 @@ axios.interceptors.request.use((config) => {
 	return Promise.reject(error);
 });
 // 返回拦截
-axios.interceptors.response.use((response) => {
-	console.log(response)
-}, (error) => {
-	return Promise.reject(error);
-});
+// axios.interceptors.response.use((response) => {
+// 	// console.log(response)
+// }, (error) => {
+// 	return Promise.reject(error);
+// });
 
 export default axios
