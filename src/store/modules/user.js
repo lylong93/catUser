@@ -1,4 +1,5 @@
 import {apiUserLogin,apiUserRegiste,apiRefurbish} from '@/api'
+import {ioLogin} from '@/socket'
 
 const user = {
 	namespaced: true,
@@ -16,39 +17,31 @@ const user = {
 			commit('LOADING',null,{ root: true })
 			try{
 				let query = await apiUserRegiste(user)
-					commit('LOADEND',null,{ root: true })
-					console.log(query)
-					if(query.data.state===0) { 
-						commit('_changeData',query.data)
-						commit('LOADIN',null,{ root: true })
-					}else {
-						commit('DEERR','失败',{ root: true })
-					}
+					
+				await dispatch('_next',query)
 			}
 			catch(err) {
-				commit('deErr','报错',{ root: true })
+				commit('DEERR','报错',{ root: true })
 			}
 		},
-		async login({ commit},user) {
+		async login({ dispatch,commit},user) {
+			commit('LOADING',null,{ root: true })
+			try {
+				let query = await apiUserLogin(user)
 
-			commit('loading',null,{ root: true })
+				await dispatch('_next',query)
 
-			let query = await apiUserLogin(user)
-
-			if(query.data.state==='0') {
-				commit('loadEnd',null,{ root: true })
-				commit('changeData',query.data)
-			}else {
-				commit('deErr','报错',{ root: true })
+			}catch(err) {
+				commit('DEERR','报错',{ root: true })
 			}
 		},
-		async refurbish({ commit},user) {
+		async refurbish({dispatch,commit},user) {
 			commit('LOADING',null,{ root: true })
 			try{
 				let query = await apiRefurbish()
 				console.log(query)
 				if(query.data.state === 0) {
-					commit('_changeData',query.data)
+					commit('_changeData',query.data)	
 				} else {
 					commit('_changeData',query.data)
 				}
@@ -57,6 +50,19 @@ const user = {
 				commit('DEERR','报错',{ root: true })
 			}
 		},
+		_next({commit},query) {
+			commit('LOADEND',null,{ root: true })
+			console.log(query)
+			if(query.data.state===0) { 
+				commit('_changeData',query.data)
+				localStorage.setItem('token',query.data.token)
+				ioLogin(query.data.name)
+				commit('LOADIN',null,{ root: true })
+			}else {
+				commit('DEERR','失败',{ root: true })
+			}
+		},
+		
 	}
 }
 

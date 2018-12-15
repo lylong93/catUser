@@ -10,7 +10,7 @@ import Footer from './Footer'
 export default {
   name: 'App',
   created() {
-    // this.$store.dispatch('user/refurbish')
+    this.$store.dispatch('user/refurbish')
   },
   components:{
     Footer

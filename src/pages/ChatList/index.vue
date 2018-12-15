@@ -15,6 +15,7 @@
 </template>
 <script>
 import Back from '@/commons/Back'
+
 export default  {
 	data() {
 		return{

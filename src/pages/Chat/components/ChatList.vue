@@ -11,13 +11,13 @@
 </template>
 <script>
 export default  {
+    props:['list'],
 	data() {
 		return{
-            list:[{flag:true,msg:'我手动挡和建行手机号集合计划,我手动挡和建行手机号集合计划'},{flag:false,msg:'我手动挡和建行手'},{flag:true},{flag:false},{flag:true},{flag:false},{flag:true},{flag:false},{flag:true}],
             rightClass: 'msgright',
             leftClass: 'msgleft',
 		}
-	},
+    },
 }
 </script>
 <style lang="scss" scoped>

@@ -1,16 +1,24 @@
 <template>
 	<div class="chatinput">
-        <input type="text" class="input">
-        <div class="btn">send</div>
+        <input type="text" class="input" v-model="msg">
+        <div class="btn" @click="btnHeadler">send</div>
 	</div>
 </template>
 <script>
+import { ioSendMsg } from '@/socket';
 export default  {
 	data() {
 		return{
-
+            msg:''
 		}
-	},
+    },
+    methods:{
+        btnHeadler() {
+            let newMsg = {flag:true,msg:this.msg}
+            // ioSendMsg()
+            this.$emit('send',newMsg)
+        }
+    }
 }
 </script>
 <style lang="scss" scoped>

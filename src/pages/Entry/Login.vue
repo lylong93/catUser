@@ -20,6 +20,7 @@ import Err from '@/commons/Err'
 import EntryInput from './components/EntryInput'
 import EntryButton from './components/EntryButton'
 import { mapActions } from 'vuex'
+
 export default {
   name: 'Login',
   data () {
@@ -40,12 +41,12 @@ export default {
     goRegiste() {
       this.$router.push('/registe')
     },
-    log() {
+    async log() {
       let user = {
         username:this.username,
         password:this.password
       }
-      this.login(user)
+      await this['user/login'](user)
     }
   },
   components:{

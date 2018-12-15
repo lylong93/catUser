@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 const URL = 'http://localhost:8000';
+
 const token = localStorage.getItem('token');
 // 请求拦截
 axios.interceptors.request.use((config) => {
