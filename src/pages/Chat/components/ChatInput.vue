@@ -14,8 +14,7 @@ export default  {
     },
     methods:{
         btnHeadler() {
-            let newMsg = {flag:true,msg:this.msg}
-            // ioSendMsg()
+            let newMsg = {from: '哈哈哈', to: 'lyl',msg:this.msg}
             this.$emit('send',newMsg)
         }
     }

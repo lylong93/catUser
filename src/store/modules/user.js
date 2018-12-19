@@ -37,6 +37,7 @@ const user = {
 		},
 		async refurbish({dispatch,commit},user) {
 			commit('LOADING',null,{ root: true })
+			ioLogin('哈哈哈')
 			try{
 				let query = await apiRefurbish()
 				console.log(query)

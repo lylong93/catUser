@@ -21,9 +21,10 @@ export default  {
     },
 	methods:{
 		send(ok) {
-			// alert('ok')
-			// alert(ok)
-			this.list.push(ok)
+			console.log(ok)
+			ioSendMsg(ok)
+			// this.list.push(ok)
+			// ioSendMsg()
 		},
 		
 	},
