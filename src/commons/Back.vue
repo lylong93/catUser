@@ -19,6 +19,7 @@
 		}
 	}
 </script>
+
 <style lang="scss" scoped>
 	.back {
 		height:80px;

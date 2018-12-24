@@ -1,6 +1,6 @@
 <template>
 	<div class="wrapper">
-		<span v-for="i in 5">&#x2605;</span>
+		<span v-for="(i,k) in 5" :key="k">&#x2605;</span>
 	</div>
 </template>
 <script>

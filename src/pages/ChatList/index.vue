@@ -5,8 +5,8 @@
             <div v-for="i in list" class="chateve" @click="goChat">
                 <div class="avatar"></div>
                 <div class="main">
-                    <div class="name">丽水</div>
-                    <div class="msg">我说的就是考试收费我说的就是考试收费我说的就是考试收费我说的就是考试收费</div>
+                    <div class="name">test</div>
+                    <div class="msg">12345667888</div>
                 </div>
                 <div class="time">19:00</div>
             </div>
